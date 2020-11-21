@@ -11,11 +11,14 @@ import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NavLandingComponent } from './nav-landing/nav-landing.component';
 import { RegistroUsuarioComponent } from './registro-usuario/registro-usuario.component';
+import { PlntillaPrimeraComponent } from './plntilla-primera/plntilla-primera.component';
+import { PlntillaSegundaComponent } from './plntilla-segunda/plntilla-segunda.component';
 
 const routes: Routes = [
   { path: 'registro-usuario', component: RegistroUsuarioComponent},
   { path: 'registro', component: RegistroComponent},
   { path: 'login', component: LoginComponent },
+  { path: 'plntilla-primera', component: PlntillaPrimeraComponent},
   { path: '**', component: LandingComponent }  
 ];
 @NgModule({
@@ -27,7 +30,9 @@ const routes: Routes = [
     RegistroComponent,
     LoginComponent,
     NavLandingComponent,
-    RegistroUsuarioComponent
+    RegistroUsuarioComponent,
+    PlntillaPrimeraComponent,
+    PlntillaSegundaComponent
   ],
   imports: [
     BrowserModule,
