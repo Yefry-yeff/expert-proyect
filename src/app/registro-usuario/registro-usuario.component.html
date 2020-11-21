@@ -1,0 +1,37 @@
+<body>
+        <app-nav-usuario></app-nav-usuario>
+        <section class="pt-5 social center" style="margin-top:50px;" id="regUsuarioSection">
+        <div class="container">
+            <div class="card" style="width: absolute;">
+                <div class="card-header">
+                    <h3>¡Registrate y se parte de este comercio!</h3>
+                  </div>
+                <div class="card-body">
+                  <h5 class="card-title">Rellena los campos para tu registro.</h5>
+                  <hr>
+                    <form [formGroup]="">
+                        <label>Primer Nombre: </label>
+                        <input type="text" class="form-control" formControlName="pNombre" placeholder="Escribe aqui">
+                        <label>Segundo Nombre: </label>
+                        <input type="text" class="form-control"formControlName="sNombre" placeholder="Escribe aqui">
+                        <label>Primer Apellido: </label>
+                        <input type="text" class="form-control"formControlName="pApellido" placeholder="Escribe aqui">
+                        <label>Segundo Apellido: </label>
+                        <input type="text" class="form-control"formControlName="sApellido" placeholder="Escribe aqui">
+                        <label>Fecha de Nacimiento: </label>
+                        <input type="date" class="form-control"formControlName="sApellido" placeholder="Escribe aqui">
+                        <label>Direccion: </label>
+                        <input type="text" class="form-control"formControlName="direccion" placeholder="Escribe aqui">
+                        <label>Correo Electronico: </label>
+                        <input type="text" class="form-control"formControlName="sApellido" placeholder="Escribe aqui">
+                        <label>Usuario: </label>
+                        <input type="text" class="form-control"formControlName="sApellido" placeholder="Escribe aqui">
+                        <label>Contraseña: </label>
+                        <input type="password" class="form-control" password formControlName="sApellido" placeholder="Escribe aqui"><br>
+                    </form>
+                    <button type="button "  class="btn btn-block rounded-0 py- text-white " style="background: #4D9DC1; ">Registrar</button>
+                </div>
+              </div>
+        </div>
+    </section>
+</body>

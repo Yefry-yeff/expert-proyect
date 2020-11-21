@@ -1,0 +1,27 @@
+<body>
+    <app-nav-usuario></app-nav-usuario>
+    <section class="pt-5 social center" style="margin-top:50px;" id="regUsuarioSection">
+    <div class="container">
+        <div class="card" style="width: absolute;">
+            <div class="card-header">
+                <h3>¡Registra tu producto o servicio!</h3>
+              </div>
+            <div class="card-body">
+              <h5 class="card-title">Rellena los campos para tu registro.</h5>
+              <hr>
+                <form [formGroup]="">
+                    <label>Nombre de Empresa: </label>
+                    <input type="text" class="form-control" formControlName="nombreE" placeholder="Escribe aqui">
+                    <label>Slogan: </label>
+                    <input type="text" class="form-control"formControlName="slogan" placeholder="Escribe aqui">
+                    <label>Descripcion de tu servicio/producto: </label>
+                    <input type="text" class="form-control"formControlName="descripcion" placeholder="Escribe aqui">
+                    <label>Direccion: </label>
+                </form>
+                <button type="button "  class="btn btn-block rounded-0 py- text-white " style="background: #4D9DC1; ">Registrar mi Empresa</button>
+                <a href="">No estas registrado? click aqui</a>
+            </div>
+          </div>
+    </div>
+</section>
+</body>
