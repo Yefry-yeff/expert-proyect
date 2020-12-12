@@ -24,16 +24,16 @@ export class RegistroUsuarioComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  enviar() {
+   enviar() {
     console.log(this.Formulario.value);
-    this.usuarioService.registarusuarios(this.Formulario.value).subscribe(
+    this.usuarioService.registarusuario(this.Formulario.value).subscribe(
       res=>{​​​​​
         console.log(res);
       }​​​​​,error=>{​​​​​
         console.log(error);
       }​​​​​
     );
-  }
+  } 
 
 
 }

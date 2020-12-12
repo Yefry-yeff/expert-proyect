@@ -8,9 +8,12 @@ export class UsuariosService {
 
   constructor(private httpClient: HttpClient) { }
   
-
-  registarusuarios(data):Observable<any>{​​​​​
-    return this.httpClient.post('http://localhost:8888/usuarios',{​​​​​data}​​​​​);
+  registarusuario(algo) {
+    return algo;
+  }
+  obtenerUsuario(){​​​​​
+    return this.httpClient.get('http://localhost:8888/usuario'​​​​​);
   }​​​​​
+
 
 }

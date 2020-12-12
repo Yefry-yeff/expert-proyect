@@ -1,10 +1,10 @@
 var express = require('express');//importando express
 var router = express.Router();//declarando objeto para las rutas
-var page = require('../models/pages.modelo');
+var Page = require('../models/pages.modelo');
 var mongoose = require('mongoose');//Modulo para utilzar el tipo de dato objectId
 
 router.get('/', (req, res)=>{
-    page.find({},{
+    Page.find({},{
         plantilla: true,
         colorPrincipal: true,
         colorSecunario: true,
@@ -17,7 +17,7 @@ router.get('/', (req, res)=>{
 
 router.get(':idPage', (req, res)=>{
     let idPage = req.params.idPage;
-    page.find({},{
+    Page.find({},{
         plantilla: true,
         colorPrincipal: true,
         colorSecunario: true,
@@ -30,7 +30,7 @@ router.get(':idPage', (req, res)=>{
 
 router.post('/', (req, res) => {
     let body = req.body;
-    let page = newpage({
+    let page = new Page({
         plantilla: body.plantilla,
         colorPrincipal: body.colorPrincipal,
         colorSecunario: body.colorSecunario,

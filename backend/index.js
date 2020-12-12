@@ -27,6 +27,9 @@ app.use('/planes', planesRouter);
 var rolesRouter = require('./routers/roles-routers');
 app.use('/roles', rolesRouter);
 
+var pageRouter = require('./routers/pages-routers');
+app.use('/pages', pageRouter);
+
 app.listen(8888, ()=>{
     console.log('Servidor del backend levantado en 8888');
 });

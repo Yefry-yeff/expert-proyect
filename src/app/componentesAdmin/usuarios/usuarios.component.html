@@ -2,22 +2,22 @@
 <table class="table">
     <thead class="thead-dark">
       <tr>
-        <th scope="col">Indice</th>
         <th scope="col">Nombre</th>
         <th scope="col">Apellido</th>
-        <th scope="col">E-mail</th>
-        <th scope="col">direccion</th>
-        <th scope="col">Categoria</th>
+        <th scope="col">Alias</th>
+        <th scope="col">Edad</th>
+        <th scope="col">Direccion</th>
+        <th scope="col">Correo Electronico</th>
       </tr>
     </thead>
     <tbody>
-      <tr class="table-dark">
-        <td>1</td>
-        <td>Carlos</td>
-        <td>Beltran</td>
-        <td>elcarlin2020@gmail.com</td>
-        <td>Col. San MeQuieroGrduar</td>
-        <td>0</td>
+      <tr *ngFor="let item of usuario" class="table-dark">
+        <td>{{item.nombreUsuario}}</td>
+        <td>{{item.apellidoUsuario}}</td>
+        <td>{{item.nickNameUsuario}}</td>
+        <td>{{item.edadUsuario}}</td>
+        <td>{{item.direccionUsiario}}</td>
+        <td>{{item.emailUsuario}}</td>
       </tr>
      
     </tbody>
