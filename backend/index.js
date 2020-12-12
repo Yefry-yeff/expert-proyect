@@ -11,7 +11,21 @@ app.use(bodyParser.urlencoded({ extended: true }));//Para poblar el json
 
 var usuarioRouter = require('./routers/usuarios-routers');
 app.use('/usuario', usuarioRouter);//TODO LO QUE VENGA CON /USUARIO ME LO ENVIA QUI
- 
+
+var empresaRouter = require('./routers/empresa-routers');
+app.use('/empresa', empresaRouter);
+
+var categoriaRouter = require('./routers/categoria-routers');
+app.use('/categoria', categoriaRouter);
+
+var adminRouter = require('./routers/admin-routers');
+app.use('/admin', adminRouter);
+
+var planesRouter = require('./routers/planes-routers');
+app.use('/planes', planesRouter);
+
+var rolesRouter = require('./routers/roles-routers');
+app.use('/roles', rolesRouter);
 
 app.listen(8888, ()=>{
     console.log('Servidor del backend levantado en 8888');

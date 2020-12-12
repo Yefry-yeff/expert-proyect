@@ -1,15 +1,19 @@
-<h2 class="text"><b>Hola Amin! Mira los roles de usuario existntes</b></h2> <br>
+<h2 class="text"><b>Hola Admin! PLANES</b></h2> <br>
 <table class="table">
     <thead class="thead-dark">
       <tr>
+        <th scope="col">Indice</th>
         <th scope="col">Nombre rol</th>
+        <th scope="col">Categoria</th>
         <th scope="col">Descripcion</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of rol" class="table-dark">
-        <td>{{item.rol}}</td>
+      <tr  *ngFor="let item of plan"  class="table-dark" >
+        <td>1</td>
+        <td>{{item.planes}}</td>
         <td>{{item.descripcion}}</td>
+        <td>{{item.precio}}</td>
       </tr>
      
     </tbody>
@@ -23,4 +27,3 @@
       <button type="button" class="btn btn-info">Eliminar</button>
     </div>
 </div>
-

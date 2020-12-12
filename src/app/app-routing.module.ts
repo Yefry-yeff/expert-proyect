@@ -10,7 +10,8 @@ import { RolesUsuariosComponent } from './componentesAdmin/roles-usuarios/roles-
 import { UsuariosComponent } from './componentesAdmin/usuarios/usuarios.component';
 import { PlantillasComponent } from './componentesAdmin/plantillas/plantillas.component';
 import { DashboardAdministradorComponent } from './paginas/dashboard-administrador/dashboard-administrador.component';
-
+import { EmpresasComponent } from './componentesAdmin/empresas/empresas.component';
+import { PlanesComponent } from './componentesAdmin/planes/planes.component';
 
 
 
@@ -20,7 +21,9 @@ const routes: Routes = [
     path: 'dashboardAdmin', component: DashboardAdministradorComponent, children: [
       { path: 'plantillas', component: PlantillasComponent },
       { path: 'usuarios', component: UsuariosComponent },
-      { path: 'roles', component: RolesUsuariosComponent}
+      { path: 'roles', component: RolesUsuariosComponent },
+      { path: 'empresas', component: EmpresasComponent },
+      { path: 'planes', component: PlanesComponent }
     ]
   },
 

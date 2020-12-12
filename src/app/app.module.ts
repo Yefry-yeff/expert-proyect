@@ -30,11 +30,17 @@ import { SidebarClienteComponent } from './componentesCliente/sidebar-cliente/si
 import { NavbarClienteComponent } from './componentesCliente/navbar-cliente/navbar-cliente.component';
 import { DashboardAdministradorComponent } from './paginas/dashboard-administrador/dashboard-administrador.component';
 import { SidebarAdminComponent } from './componentesAdmin/sidebar-admin/sidebar-admin.component';
+import { EmpresasComponent } from './componentesAdmin/empresas/empresas.component';
+import { PlanesComponent } from './componentesAdmin/planes/planes.component';
+import { LoginEmpresaComponent } from './login-empresa/login-empresa.component';
+import { LoginAdminComponent } from './login-admin/login-admin.component';
 
 const routes: Routes = [
   { path: 'registro-usuario', component: RegistroUsuarioComponent},
   { path: 'registro', component: RegistroComponent},
   { path: 'login', component: LoginComponent },
+  { path: 'loginEmpresa', component: LoginEmpresaComponent },
+  { path: 'loginAdmin', component: LoginAdminComponent },
   { path: 'plntilla-primera', component: PlntillaPrimeraComponent},
   { path: '**', component: LandingComponent }  
 ];
@@ -65,7 +71,11 @@ const routes: Routes = [
     SidebarClienteComponent,
     NavbarClienteComponent,
     DashboardAdministradorComponent,
-    SidebarAdminComponent
+    SidebarAdminComponent,
+    EmpresasComponent,
+    PlanesComponent,
+    LoginEmpresaComponent,
+    LoginAdminComponent
   ],
   imports: [
     BrowserModule,

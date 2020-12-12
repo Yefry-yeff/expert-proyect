@@ -4,15 +4,11 @@ import { HttpClient } from '@angular/common/http'
 @Injectable({
   providedIn: 'root'
 })
-export class PlanesService {
+export class EmpresaService {
 
   constructor(private httpClient: HttpClient) { }
 
-  
-
-  obtenerPlan() {
-    return this.httpClient.get('http://localhost:8888/planes');
+  obtenerEmpresa() {
+    return this.httpClient.get('http://localhost:8888/empresa');
   }
-
-
 }
