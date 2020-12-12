@@ -6,10 +6,7 @@ import { HttpClient } from '@angular/common/http'
 })
 export class PlanesService {
 
-  constructor(private httpClient: HttpClient) { }
-
-  
-
+  constructor(private httpClient: HttpClient) { }  
   obtenerPlan() {
     return this.httpClient.get('http://localhost:8888/planes');
   }

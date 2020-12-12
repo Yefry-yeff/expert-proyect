@@ -6,5 +6,9 @@ import { Observable } from 'rxjs';
 })
 export class PagesService {
 
-  constructor() { }
+  constructor(private httpClient:HttpClient) { }
+  obtenerPage() {
+    return this.httpClient.get('http://localhost:8888/pages');
+  }
+
 }

@@ -1,17 +1,18 @@
-<div class="row">
+<div *ngFor="let item of page" class="row">
     <div class="col-md-2">
       <div class="card">
         <div class="card-header">
-          Plantilla 1
+          {{item.plantilla}}
         </div>
         <div class="card-body">
           <h5 class="card-title">Atributos escogidos</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <p class="card-text">Color Principal: {{item.colorPrincipal}}</p>
+          <p class="card-text">Color Secundario: {{item.colorSecunario}}</p>
+          <p class="card-text">navbarColor: {{item.navbarColor}}</p>
           <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
       </div>
     </div>
- 
 </div>
 
   
