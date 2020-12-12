@@ -1,0 +1,65 @@
+<!-- <br>
+<nav id="sidebar" >
+    <div class="custom-menu d-none">
+        <button type="button" id="sidebarCollapse" class="btn btn-primary">
+        </button>
+    </div>
+    <div class="img bg-wrap text-center py-4" >
+        <div class="user-logo">
+          
+            <h3>Nombre Usuario</h3>
+        </div>
+    </div>
+    <ul class="list-unstyled components mb-5">
+        <li class="">
+            <a routerLinkActive="active"><span class="fa fa-home mr-3"></span>Mis productos</a>
+        </li>
+        <li class="">
+            <a routerLinkActive="active"><span class="fa fa-home mr-3"></span>Canasta</a>
+        </li>
+        <li class="">
+            <a  routerLinkActive="active"><span class="fa fa-home mr-3"></span>Cerrar sesion</a>
+        </li>
+    </ul>
+</nav> -->
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+   <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            
+            <ul class="sidebar-nav list-unstyled components mb-5">
+                <li class="">
+                    <h3>Nombre Empresa</h3>
+                </li>
+                <li class="">
+                    <a [routerLink]="['/dashboardEmpresa/imagenesEmpresa']"routerLinkActive="active"><span class="fa fa-home mr-3"></span>Mis imagenes</a>
+                </li>
+                <li class="">
+                    <a [routerLink]="['/dashboardEmpresa/productosEmpresa']" routerLinkActive="active"><span class="fa fa-home mr-3"></span>Mis productos</a>
+                </li>
+                <li class="">
+                    <a  [routerLink]="['/dashboardEmpresa/pagesEmpresa']"routerLinkActive="active"><span class="fa fa-home mr-3"></span>Mis sitios Web</a>
+                </li>
+                <li class="">
+                    <a  routerLinkActive="active"><span class="fa fa-home mr-3"></span>Cerrar sesion</a>
+                </li>
+
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+     <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>

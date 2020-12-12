@@ -9,27 +9,23 @@
                 <div class="card-body">
                   <h5 class="card-title">Rellena los campos para tu registro.</h5>
                   <hr>
-                    <form [formGroup]="">
-                        <label>Primer Nombre: </label>
-                        <input type="text" class="form-control" formControlName="pNombre" placeholder="Escribe aqui">
-                        <label>Segundo Nombre: </label>
-                        <input type="text" class="form-control"formControlName="sNombre" placeholder="Escribe aqui">
-                        <label>Primer Apellido: </label>
-                        <input type="text" class="form-control"formControlName="pApellido" placeholder="Escribe aqui">
-                        <label>Segundo Apellido: </label>
-                        <input type="text" class="form-control"formControlName="sApellido" placeholder="Escribe aqui">
-                        <label>Fecha de Nacimiento: </label>
-                        <input type="date" class="form-control"formControlName="sApellido" placeholder="Escribe aqui">
+                    <form [formGroup]="Formulario">
+                        <label>Nombre: </label>
+                        <input type="text" class="form-control" formControlName="nombreUsuario" name="nombreUsuario" placeholder="Escribe aqui">
+                        <label>Apellido: </label>
+                        <input type="text" class="form-control" formControlName="apellidoUsuario" name="apellidoUsuario"placeholder="Escribe aqui">
+                        <label>Escribe tu usuario: </label>
+                        <input type="text" class="form-control" formControlName="nickNameUsuario" name="nickNameUsuario"placeholder="Escribe aqui">
+                        <label>Edad: </label>
+                        <input type="text" class="form-control" formControlName="edadUsuario" name="edadUsuario"placeholder="Escribe aqui">
                         <label>Direccion: </label>
-                        <input type="text" class="form-control"formControlName="direccion" placeholder="Escribe aqui">
-                        <label>Correo Electronico: </label>
-                        <input type="text" class="form-control"formControlName="sApellido" placeholder="Escribe aqui">
-                        <label>Usuario: </label>
-                        <input type="text" class="form-control"formControlName="sApellido" placeholder="Escribe aqui">
+                        <input type="text" class="form-control" formControlName="direccionUsiario" name="direccionUsiario"placeholder="Escribe aqui">
+                        <label>Correo Elctronico: </label>
+                        <input type="text" class="form-control" formControlName="emailUsuario" name="emailUsuario"placeholder="Escribe aqui">
                         <label>Contraseña: </label>
-                        <input type="password" class="form-control" password formControlName="sApellido" placeholder="Escribe aqui"><br>
+                        <input type="password" class="form-control" password formControlName="password" name="password"placeholder="Escribe aqui"><br>
                     </form>
-                    <button type="button "  class="btn btn-block rounded-0 py- text-white " style="background: #4D9DC1; ">Registrar</button>
+                    <button type="button" (click)="enviar()"  class="btn btn-block rounded-0 py- text-white" style="background: #4D9DC1; ">Registrar</button>
                 </div>
               </div>
         </div>
