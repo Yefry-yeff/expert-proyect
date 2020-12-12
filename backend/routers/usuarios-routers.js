@@ -11,6 +11,7 @@ router.get('/', (req, res)=>{
         edadUsuario: true,
         direccionUsiario: true,
         emailUsuario: true,
+        rolUsuario: true,
         carrito: true
     }).then(datos =>{
         res.send(datos);
@@ -27,6 +28,7 @@ router.get(':idUsuario', (req, res)=>{
         edadUsuario: true,
         direccionUsiario: true,
         emailUsuario: true,
+        rolUsuario: true,
         carrito: true
     }).then(datos =>{
         res.send(datos[0]);
@@ -44,6 +46,7 @@ router.post('/', (req, res) => {
         direccionUsiario: body.direccionUsiario,
         emailUsuario: body.emailUsuario,
         password: body.password,
+        rolUsuario: body.rolUsuario,
         carrito: []
     });
     u.save().then(result => {
