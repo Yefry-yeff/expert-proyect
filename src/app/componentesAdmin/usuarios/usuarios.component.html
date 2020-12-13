@@ -1,45 +1,47 @@
+
 <h2 class="text"><b>Hola Admin! Estos son nuestros usuarios registrados</b></h2> <br>
 <table class="table">
-    <thead class="thead-dark">
-      <tr>
-        <th scope="col">Nombre</th>
-        <th scope="col">Apellido</th>
-        <th scope="col">Alias</th>
-        <th scope="col">Edad</th>
-        <th scope="col">Direccion</th>
-        <th scope="col">Correo Electronico</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of usuario" class="table-dark">
-        <td>{{item.nombreUsuario}}</td>
-        <td>{{item.apellidoUsuario}}</td>
-        <td>{{item.nickNameUsuario}}</td>
-        <td>{{item.edadUsuario}}</td>
-        <td>{{item.direccionUsiario}}</td>
-        <td>{{item.emailUsuario}}</td>
-      </tr>
-     
-    </tbody>
-  </table>
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">Alias</th>
+      <th scope="col">Edad</th>
+      <th scope="col">Direccion</th>
+      <th scope="col">Correo Electronico</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of usuario" class="table-dark">
+      <td>{{item.nombreUsuario}}</td>
+      <td>{{item.apellidoUsuario}}</td>
+      <td>{{item.nickNameUsuario}}</td>
+      <td>{{item.edadUsuario}}</td>
+      <td>{{item.direccionUsiario}}</td>
+      <td>{{item.emailUsuario}}</td>
+    </tr>
 
-  <div class="row">
-    <div class="col-2">
-      <button type="button" class="btn btn-info">Agregar</button>
-    </div>
-    <div class="col-2">
-      <button type="button" class="btn btn-info">Eliminar</button>
-    </div>
+  </tbody>
+</table>
+
+<div class="row m-5">
+  <div class="col-2">
+    <button type="button" class="btn btn-info">Agregar</button>
+  </div>
+  <div class="col-2">
+    <button type="button" class="btn btn-info">Eliminar</button>
+  </div>
 </div>
 
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+
+<button type="button" (click)="prueba()" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
   Launch demo modal
 </button>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -52,7 +54,8 @@
         <div>
           <div class="form-group">
             <label for="exampleInputEmail1">Nombre</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="TYPE HERE">
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+              placeholder="TYPE HERE">
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Apellido</label>
@@ -88,3 +91,5 @@
     </div>
   </div>
 </div>
+ 
+

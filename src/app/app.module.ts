@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule, Routes } from '@angular/router';
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,7 +8,7 @@ import { NavUsuarioComponent } from './nav-usuario/nav-usuario.component';
 import { FooterUsuarioComponent } from './footer-usuario/footer-usuario.component';
 import { RegistroComponent } from './registro/registro.component';
 import { LoginComponent } from './login/login.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NavLandingComponent } from './nav-landing/nav-landing.component';
 import { RegistroUsuarioComponent } from './registro-usuario/registro-usuario.component';
 import { PlntillaPrimeraComponent } from './plntilla-primera/plntilla-primera.component';
@@ -34,7 +34,8 @@ import { EmpresasComponent } from './componentesAdmin/empresas/empresas.componen
 import { PlanesComponent } from './componentesAdmin/planes/planes.component';
 import { LoginEmpresaComponent } from './login-empresa/login-empresa.component';
 import { LoginAdminComponent } from './login-admin/login-admin.component';
-
+import { PruebaComponent } from './prueba/prueba.component';
+/*
 const routes: Routes = [
   { path: 'registro-usuario', component: RegistroUsuarioComponent},
   { path: 'registro', component: RegistroComponent},
@@ -44,6 +45,7 @@ const routes: Routes = [
   { path: 'plntilla-primera', component: PlntillaPrimeraComponent},
   { path: '**', component: LandingComponent }  
 ];
+*/
 @NgModule({
   declarations: [
     AppComponent,
@@ -75,12 +77,14 @@ const routes: Routes = [
     EmpresasComponent,
     PlanesComponent,
     LoginEmpresaComponent,
-    LoginAdminComponent
+    LoginAdminComponent,
+    PruebaComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes),
+    CommonModule,
     AppRoutingModule,
+    FormsModule,
     ReactiveFormsModule,
     HttpClientModule
   ],

@@ -12,14 +12,29 @@ import { PlantillasComponent } from './componentesAdmin/plantillas/plantillas.co
 import { DashboardAdministradorComponent } from './paginas/dashboard-administrador/dashboard-administrador.component';
 import { EmpresasComponent } from './componentesAdmin/empresas/empresas.component';
 import { PlanesComponent } from './componentesAdmin/planes/planes.component';
+import { PruebaComponent } from './prueba/prueba.component';
+import { RegistroComponent } from './registro/registro.component';
+import { LoginComponent } from './login/login.component';
+import { LoginEmpresaComponent } from './login-empresa/login-empresa.component';
+import { LoginAdminComponent } from './login-admin/login-admin.component';
+import { LandingComponent } from './landing/landing.component';
+import { RegistroUsuarioComponent } from './registro-usuario/registro-usuario.component';
 
 
 
 
 const routes: Routes = [
+
+  { path: 'registro-usuario', component: RegistroUsuarioComponent},
+  { path: 'registro', component: RegistroComponent},
+  { path: 'login', component: LoginComponent },
+  { path: 'loginEmpresa', component: LoginEmpresaComponent },
+  { path: 'loginAdmin', component: LoginAdminComponent },
+  { path: '**', component: LandingComponent } ,
   {
     path: 'dashboardAdmin', component: DashboardAdministradorComponent, children: [
       { path: 'plantillas', component: PlantillasComponent },
+      { path: 'prueba', component: PruebaComponent },
       { path: 'usuarios', component: UsuariosComponent },
       { path: 'roles', component: RolesUsuariosComponent },
       { path: 'empresas', component: EmpresasComponent },
@@ -27,18 +42,20 @@ const routes: Routes = [
     ]
   },
 
+
   {
     path: 'dashboardEmpresa', component: DashboardEmpresaComponent, children: [
       { path: 'imagenesEmpresa', component: ImagenesEmpresaComponent },
       { path: 'productosEmpresa', component: ProductoEmpresaComponent },
-      { path: 'pagesEmpresa', component: PagesEmpresaComponent}
+      { path: 'pagesEmpresa', component: PagesEmpresaComponent }
     ]
   },
   {
     path: 'dashboardCliente', component: DashboardClienteComponent, children: [
-      { path: 'canastaCliente', component: CanastaComponent}
+      { path: 'canastaCliente', component: CanastaComponent }
     ]
-  }
+  },
+
 ];
 
 @NgModule({

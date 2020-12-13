@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuariosService } from 'src/app/servicios/usuarios.service';
 
+
 @Component({
   selector: 'app-usuarios',
   templateUrl: './usuarios.component.html',
@@ -33,6 +34,10 @@ obtenerUsuarios() {
    this.usuario = data;
    console.log(data);
  });
-}
+  }
+  
+  prueba() {
+    console.log('Prueba');
+  }
 
 }

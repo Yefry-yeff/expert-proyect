@@ -16,13 +16,24 @@
                         <path fill-rule="evenodd"
                             d="M2 12.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z" />
                     </svg></span>
-            </button>
-            <!--Atajos a secciones-->
-            <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-right: absolute;">
-                <span class="navbar-text">
-                    <b>Tu mejor tienda!!</b>
-                </span>
-            </div>
+                </button>
+                <!--Atajos a secciones-->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-right: absolute;">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" [routerLink]="['/dashboardEmpresa/imagenesEmpresa']"routerLinkActive="active"><span class="fa fa-home mr-3"></span>Mis imagenes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"[routerLink]="['/dashboardEmpresa/productosEmpresa']" routerLinkActive="active"><span class="fa fa-home mr-3"></span>Mis productos</a>
+                        </li>
+                        <li class="nac-item">
+                            <a class="nav-link" [routerLink]="['/dashboardEmpresa/pagesEmpresa']"routerLinkActive="active"><span class="fa fa-home mr-3"></span>Mis sitios Web</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLinkActive="active"><span class="fa fa-home mr-3"></span>Cerrar sesion</a>
+                        </li>
+                    </ul>
+                </div>
         </div>
     </nav>
     <!--Final del Nav-->
