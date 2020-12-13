@@ -23,7 +23,18 @@ router.get(':idRol', (req, res)=>{
         res.end();
     })
 });
+router.delete('/:idRol', (req, res) => {
 
+    Rol.remove({ _id: req.params.idRol})
+        .then((data) => {
+            res.json(data);
+            res.end();
+        })
+        .catch((erro) => {
+            res.json(error);
+            res.end();
+        })
+});
 router.post('/', (req, res) => {
     let body = req.body;
     let rol = new Rol({

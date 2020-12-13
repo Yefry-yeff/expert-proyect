@@ -19,15 +19,12 @@ export class UsuariosComponent implements OnInit {
     rolUsuario: '',
     password: ''
   };
-  constructor(private usuarioServicio: UsuariosService) {
-
-    
+  constructor(private usuarioServicio: UsuariosService) {    
   }
 
   ngOnInit(): void {
     this.obtenerUsuarios();
   }
-
 
   obtenerUsuarios() {
     this.usuarioServicio.obtenerUsuario().subscribe((data: any) => {

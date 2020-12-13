@@ -15,10 +15,10 @@ export class RolesUsuariosComponent implements OnInit {
     descripcion: ''
   };
   constructor(private rolesService: RolesService) { 
-  this.obtenerRoles();
 }
 
-ngOnInit(): void {
+  ngOnInit(): void {
+    this.obtenerRoles();
 }
 
 
@@ -28,6 +28,19 @@ obtenerRoles() {
    console.log(data);
  });
 }
-
+  eliminarRol(id) {
+    this.rolesService.eliminarRol(id).subscribe((data: any) => {
+      this.rol = data;
+      console.log(data);
+      this.obtenerRoles();
+    });
+  }
+  agregarRol() {
+    this.rolesService.guardarRol(this.roles).subscribe((data: any) => {
+      this.rol = data;
+      console.log(data);
+      this.obtenerRoles();
+    });
+  }
 
 }
