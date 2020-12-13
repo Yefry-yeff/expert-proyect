@@ -9,6 +9,7 @@
       <th scope="col">Edad</th>
       <th scope="col">Direccion</th>
       <th scope="col">Correo Electronico</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -19,26 +20,18 @@
       <td>{{item.edadUsuario}}</td>
       <td>{{item.direccionUsiario}}</td>
       <td>{{item.emailUsuario}}</td>
+      <td><button type="button" (click)="eliminarUsuario(item._id)" class="btn btn-danger btn-xs">Eliminar</button></td>
     </tr>
-
   </tbody>
 </table>
 
 <div class="row m-5">
-  <div class="col-2">
-    <button type="button" class="btn btn-info">Agregar</button>
-  </div>
-  <div class="col-2">
-    <button type="button" class="btn btn-info">Eliminar</button>
+  <div class="col-8">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      Agregar Usuario
+    </button>  
   </div>
 </div>
-
-
-
-<button type="button" (click)="prueba()" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
-</button>
-
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
   aria-hidden="true">
@@ -54,34 +47,34 @@
         <div>
           <div class="form-group">
             <label for="exampleInputEmail1">Nombre</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            <input [(ngModel)]="usuarios.nombreUsuario" type="text" class="form-control"
               placeholder="TYPE HERE">
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Apellido</label>
-            <input type="text" class="form-control" placeholder="TYPE HERE">
+            <input [(ngModel)]="usuarios.apellidoUsuario" type="text" class="form-control" placeholder="TYPE HERE">
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">nickName</label>
-            <input type="text" class="form-control" placeholder="TYPE HERE">
+            <input [(ngModel)]="usuarios.nickNameUsuario" type="text" class="form-control" placeholder="TYPE HERE">
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Edad</label>
-            <input type="text" class="form-control" placeholder="TYPE HERE">
+            <input [(ngModel)]="usuarios.edadUsuario" type="text" class="form-control" placeholder="TYPE HERE">
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Direccion</label>
-            <input type="text" class="form-control" placeholder="TYPE HERE">
+            <input [(ngModel)]="usuarios.direccionUsiario" type="text" class="form-control" placeholder="TYPE HERE">
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Correo Electronico</label>
-            <input type="text" class="form-control" placeholder="TYPE HERE">
+            <input [(ngModel)]="usuarios.emailUsuario" type="text" class="form-control" placeholder="TYPE HERE">
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Contraseña</label>
-            <input type="text" class="form-control" placeholder="TYPE HERE">
+            <input [(ngModel)]="usuarios.password" type="password" class="form-control" placeholder="TYPE HERE">
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="button" (click)="agregarUsuario()" class="btn btn-primary">Submit</button>
         </div>
       </div>
       <div class="modal-footer">

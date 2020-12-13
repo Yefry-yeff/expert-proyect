@@ -15,5 +15,11 @@ export class UsuariosService {
     return this.httpClient.get('http://localhost:8888/usuario'​​​​​);
   }​​​​​
 
+  guardarCliente(id:any) {
+    return this.httpClient.post('http://localhost:8888/usuario', id​​​​​);
 
+  }
+  eliminarCliente(id:any){
+    return this.httpClient.delete('http://localhost:8888/usuario' + '/' + id​​​​​);
+  }
 }

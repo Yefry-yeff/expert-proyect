@@ -58,4 +58,19 @@ router.post('/', (req, res) => {
     });
 });
 
+
+router.delete('/:idUsuario', (req, res) => {
+
+    usuario.remove({ _id: req.params.idUsuario })
+        .then((data) => {
+            res.json(data);
+            res.end();
+        })
+        .catch((erro) => {
+            res.json(error);
+            res.end();
+        })
+});
+
+
 module.exports = router;

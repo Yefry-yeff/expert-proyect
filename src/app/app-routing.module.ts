@@ -30,7 +30,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'loginEmpresa', component: LoginEmpresaComponent },
   { path: 'loginAdmin', component: LoginAdminComponent },
-  { path: '**', component: LandingComponent } ,
+  
   {
     path: 'dashboardAdmin', component: DashboardAdministradorComponent, children: [
       { path: 'plantillas', component: PlantillasComponent },
@@ -41,7 +41,6 @@ const routes: Routes = [
       { path: 'planes', component: PlanesComponent }
     ]
   },
-
 
   {
     path: 'dashboardEmpresa', component: DashboardEmpresaComponent, children: [
@@ -55,7 +54,7 @@ const routes: Routes = [
       { path: 'canastaCliente', component: CanastaComponent }
     ]
   },
-
+  { path: '**', component: LandingComponent } 
 ];
 
 @NgModule({
