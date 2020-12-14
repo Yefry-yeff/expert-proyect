@@ -1,31 +1,58 @@
 <h2 class="text"><b>Hola Empresa! Tu carrito de productos!</b></h2> <br>
-<table class="table">
+<table class="table" >
     <thead class="thead-dark">
-      <tr>
-        <th scope="col">Indice</th>
+      <tr >
         <th scope="col">Producto</th>
         <th scope="col">Descripcion</th>
         <th scope="col">Precio</th>
-        <th scope="col">Cantidad</th>
+        <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
-      <tr class="table-dark">
-        <td>1</td>
-        <td>Flor Rosa</td>
-        <td>Austriaca</td>
-        <td>L. 50.00</td>
-        <td>3</td>
+      <tr class="table-dark" *ngFor="let item of producto">
+        <td>{{item.productoCanasta}}</td>
+        <td>{{item.descripcion}}</td>
+        <td>{{item.precio}}</td>
+        <td><button (click)="eliminarProducto(item._id)" type="button" class="btn btn-danger">Eliminar</button></td>
       </tr>
-     
     </tbody>
   </table>
 
-  <div class="row">
-    <div class="col-2">
-      <button type="button" class="btn btn-info">Agregar</button>
+<div class="row">
+  <div class="col-4">
+    <button data-toggle="modal" data-target="#productoModal" type="button" class="btn btn-info">Agregar Nuevo Producto</button>
+  </div>
+</div>
+<div class="modal fade" id="productoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Agregar un nuevo producto al inventario</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Nombre del Producto</label>
+            <input [(ngModel)]="productos.productoCanasta" type="text" class="form-control" placeholder="TYPE HERE">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Descripcion</label>
+            <input [(ngModel)]="productos.descripcion" type="text" class="form-control" placeholder="TYPE HERE">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Precio</label>
+            <input [(ngModel)]="productos.precio" type="text" class="form-control" placeholder="TYPE HERE">
+          </div>
+          <button (click)="agregarProducto()" type="button" class="btn btn-primary">Agregar Producto</button>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+      </div>
     </div>
-    <div class="col-2">
-      <button type="button" class="btn btn-info">Eliminar</button>
-    </div>
+  </div>
 </div>

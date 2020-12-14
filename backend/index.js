@@ -30,6 +30,9 @@ app.use('/roles', rolesRouter);
 var pageRouter = require('./routers/pages-routers');
 app.use('/pages', pageRouter);
 
+var productoRouter = require('./routers/producto-routers');
+app.use('/productos', productoRouter);
+
 app.listen(8888, ()=>{
     console.log('Servidor del backend levantado en 8888');
 });

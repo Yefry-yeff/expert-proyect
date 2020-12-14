@@ -2,30 +2,75 @@
 <table class="table">
     <thead class="thead-dark">
       <tr>
-        <th scope="col">Indice</th>
-        <th scope="col">Plantilla</th>
+        <th scope="col">Pagina</th>
         <th scope="col">Color principl</th>
         <th scope="col">Color Secundario</th>
         <th scope="col">Color Navbar</th>
+        <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
-      <tr class="table-dark">
-        <td>1</td>
-        <td>plantilla 1</td>
-        <td>Azul</td>
-        <td>Blanco</td>
-        <td>Info</td>
+      <tr class="table-dark" *ngFor="let item of page">
+        <td>{{item.plantilla}}</td>
+        <td>{{item.colorPrincipal}}</td>
+        <td>{{item.colorSecunario}}</td>
+        <td>{{item.navbarColor}}</td>
+        <td><button (click)="eliminarPage(item._id)" type="button" class="btn btn-danger">
+          Eliminar
+        </button></td>
       </tr>
      
     </tbody>
   </table>
 
-  <div class="row">
-    <div class="col-2">
-      <button type="button" class="btn btn-info">Agregar</button>
+  <div class="row m-5">
+    <div class="col-12">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalPageEmpresa" >
+        Agregar Nueva Pagina
+      </button>  
     </div>
-    <div class="col-2">
-      <button type="button" class="btn btn-info">Eliminar</button>
+  </div>
+  
+  <div class="modal fade" id="ModalPageEmpresa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Agregar una nueva Pagina web</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Nombre</label>
+              <input [(ngModel)]="pages.plantilla" type="text" class="form-control"
+                placeholder="TYPE HERE">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Color principal de la nueva web</label>
+              <input [(ngModel)]="pages.colorPrincipal" type="text" class="form-control" placeholder="TYPE HERE">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Color secundario de la nueva web</label>
+              <input [(ngModel)]="pages.colorSecunario" type="text" class="form-control" placeholder="TYPE HERE">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Color del Navbar</label>
+              <input [(ngModel)]="pages.navbarColor" type="text" class="form-control" placeholder="TYPE HERE">
+            </div>
+            <button type="button" (click)="agregarPage()"  class="btn btn-primary">Agregar</button>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
+   
+  
+  
+  
+  

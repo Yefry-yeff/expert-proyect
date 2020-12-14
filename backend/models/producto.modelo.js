@@ -8,4 +8,4 @@ var esquema = new mongoose.Schema(//declarando esquema
     }
 );
 
-module.exports = mongoose.model('producto', esquema);// exportando el modelo, enlazando esquema
+module.exports = mongoose.model('productos', esquema);// exportando el modelo, enlazando esquema
