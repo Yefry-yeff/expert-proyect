@@ -41,5 +41,16 @@ router.post('/', (req, res) => {
         res.end();
     });
 });
+router.delete('/:idPlan', (req, res) => {
 
+    Plan.remove({ _id: req.params.idPlan })
+        .then((data) => {
+            res.json(data);
+            res.end();
+        })
+        .catch((error) => {
+            res.json(error);
+            res.end();
+        })
+});
 module.exports = router;

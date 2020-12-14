@@ -37,6 +37,21 @@ export class EmpresasComponent implements OnInit {
      this.empresa = data;
      console.log(data);
    });
- }
+  }
+  agregarEmpresa() {
+    this.empresaService.guardarEmpresa(this.empresas).subscribe((data: any) => {
+      this.empresa = data;
+      console.log(data);
+      this.obtenerEmpresas();
+    });
+  }
+
+  eliminarEmpresas(id) {
+    this.empresaService.eliminarEmpresa(id).subscribe((data: any) => {
+      this.empresa = data;
+      console.log(data);
+      this.obtenerEmpresas();
+    });
+  }
 
 }

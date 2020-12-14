@@ -31,4 +31,20 @@ export class PlantillasComponent implements OnInit {
      console.log(data);
    });
   }
+
+  agregarPage() {
+    this.pagesService.guardarPlantilla(this.pages).subscribe((data: any) => {
+      this.page = data;
+      console.log(data);
+      this.obtenerPages();
+    });
+  }
+  eliminarPage(id) {
+    this.pagesService.eliminarPlantilla(id).subscribe((data: any) => {
+      this.page = data;
+      console.log(data);
+      this.obtenerPages();
+
+    });
+  }
 }

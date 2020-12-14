@@ -45,4 +45,16 @@ router.post('/', (req, res) => {
     });
 });
 
+router.delete('/:idPlantilla', (req, res) => {
+
+    Page.remove({ _id: req.params.idPlantilla })
+        .then((data) => {
+            res.json(data);
+            res.end();
+        })
+        .catch((error) => {
+            res.json(error);
+            res.end();
+        })
+});
 module.exports = router;

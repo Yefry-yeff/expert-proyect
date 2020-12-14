@@ -91,5 +91,16 @@ router.post('/categoria/:idEmpresa', function (req, res) {
     });
 });
 
+router.delete('/:idEmpresa', (req, res) => {
 
+    Empresa.remove({ _id: req.params.idEmpresa })
+        .then((data) => {
+            res.json(data);
+            res.end();
+        })
+        .catch((error) => {
+            res.json(error);
+            res.end();
+        })
+});
 module.exports = router;

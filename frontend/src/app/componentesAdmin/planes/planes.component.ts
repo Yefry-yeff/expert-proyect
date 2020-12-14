@@ -29,5 +29,19 @@ export class PlanesComponent implements OnInit {
       console.log(data);
     });
   }
+  agregarPlan() {
+    this.planService.guardarPlan(this.planes).subscribe((data: any) => {
+      this.plan = data;
+      console.log(data);
+      this.obtenerPlanes();
+    });
+  }
 
+  eliminarPlan(id) {
+    this.planService.eliminarPlan(id).subscribe((data: any) => {
+      this.plan = data;
+      console.log(data);
+      this.obtenerPlanes();
+    });
+  }
 }

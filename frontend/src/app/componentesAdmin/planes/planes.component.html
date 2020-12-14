@@ -6,6 +6,7 @@
         <th scope="col">Nombre rol</th>
         <th scope="col">Categoria</th>
         <th scope="col">Descripcion</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -14,6 +15,7 @@
         <td>{{item.planes}}</td>
         <td>{{item.descripcion}}</td>
         <td>{{item.precio}}</td>
+        <td><button (click)="eliminarPlan(item._id)" type="button" class="btn btn-danger">Eliminar</button></td>
       </tr>
      
     </tbody>
@@ -21,9 +23,41 @@
 
   <div class="row">
     <div class="col-2">
-      <button type="button" class="btn btn-info">Agregar</button>
+      <button data-toggle="modal" data-target="#planModal" type="button" class="btn btn-info">Agregar</button>
     </div>
-    <div class="col-2">
-      <button type="button" class="btn btn-info">Eliminar</button>
+</div>
+
+<div class="modal fade" id="planModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Agrgar un nuevo rol</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
     </div>
+    <div class="modal-body">
+      <div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Nombre del PLan</label>
+          <input [(ngModel)]="planes.planes" type="text" class="form-control"
+            placeholder="TYPE HERE">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Descripcion</label>
+          <input [(ngModel)]="planes.descripcion" type="text" class="form-control" placeholder="TYPE HERE">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Precio del Plan</label>
+          <input [(ngModel)]="planes.precio" type="text" class="form-control" placeholder="TYPE HERE">
+        </div>
+        <button type="button" (click)="agregarPlan()" class="btn btn-primary">Agregar Rol</button>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    </div>
+  </div>
+</div>
 </div>
