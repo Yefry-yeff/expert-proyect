@@ -35,6 +35,10 @@ import { PlanesComponent } from './componentesAdmin/planes/planes.component';
 import { LoginEmpresaComponent } from './login-empresa/login-empresa.component';
 import { LoginAdminComponent } from './login-admin/login-admin.component';
 import { PruebaComponent } from './prueba/prueba.component';
+import { GaleriaProductosComponent } from './galeria-productos/galeria-productos.component';
+import { GaleriaImagenesComponent } from './galeria-imagenes/galeria-imagenes.component';
+import { NavGaleriaImagenesComponent } from './galeria-imagenes/nav-galeria-imagenes/nav-galeria-imagenes.component';
+import { NavGaleriaProdutosComponent } from './galeria-productos/nav-galeria-produtos/nav-galeria-produtos.component';
 /*
 const routes: Routes = [
   { path: 'registro-usuario', component: RegistroUsuarioComponent},
@@ -78,7 +82,11 @@ const routes: Routes = [
     PlanesComponent,
     LoginEmpresaComponent,
     LoginAdminComponent,
-    PruebaComponent
+    PruebaComponent,
+    GaleriaProductosComponent,
+    GaleriaImagenesComponent,
+    NavGaleriaImagenesComponent,
+    NavGaleriaProdutosComponent
   ],
   imports: [
     BrowserModule,

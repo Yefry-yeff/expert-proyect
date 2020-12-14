@@ -19,6 +19,8 @@ import { LoginEmpresaComponent } from './login-empresa/login-empresa.component';
 import { LoginAdminComponent } from './login-admin/login-admin.component';
 import { LandingComponent } from './landing/landing.component';
 import { RegistroUsuarioComponent } from './registro-usuario/registro-usuario.component';
+import { GaleriaProductosComponent } from './galeria-productos/galeria-productos.component';
+import { GaleriaImagenesComponent } from './galeria-imagenes/galeria-imagenes.component';
 
 
 
@@ -30,7 +32,9 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'loginEmpresa', component: LoginEmpresaComponent },
   { path: 'loginAdmin', component: LoginAdminComponent },
-  
+  { path: 'galeriaProducto', component: GaleriaProductosComponent },
+  { path: 'galeriaImagenes', component: GaleriaImagenesComponent },
+
   {
     path: 'dashboardAdmin', component: DashboardAdministradorComponent, children: [
       { path: 'plantillas', component: PlantillasComponent },
@@ -41,7 +45,6 @@ const routes: Routes = [
       { path: 'planes', component: PlanesComponent }
     ]
   },
-
   {
     path: 'dashboardEmpresa', component: DashboardEmpresaComponent, children: [
       { path: 'imagenesEmpresa', component: ImagenesEmpresaComponent },
@@ -54,7 +57,7 @@ const routes: Routes = [
       { path: 'canastaCliente', component: CanastaComponent }
     ]
   },
-  { path: '**', component: LandingComponent } 
+  { path: '**', component: LandingComponent }
 ];
 
 @NgModule({

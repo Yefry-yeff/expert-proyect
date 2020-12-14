@@ -103,4 +103,34 @@ router.delete('/:idEmpresa', (req, res) => {
             res.end();
         })
 });
+
+//Subida de imagenes
+router.post('/image/:idEmpresa', function (req, res) {
+
+    let body = req.body;
+    let idEmpresa = req.params.idEmpresa;
+
+    Empresa.update(
+        {
+            _id: idEmpresa,
+        },
+        {
+            $push: {
+                "banco": {
+                    _id: mongoose.Types.ObjectId(),
+                    nombre: body.nombre,
+                    tipo: body.tipo,
+                    url: body.url
+                }
+            }
+        }
+    ).then(result => {
+        res.send(result);
+        res.end();
+    }).catch(error => {
+        res.send(error);
+        res.end();
+    });
+})
+
 module.exports = router;
