@@ -6,15 +6,15 @@ import { HttpClient } from '@angular/common/http'
 })
 export class PlanesService {
 
-  constructor(private httpClient: HttpClient) { }  
+  constructor(private httpClient: HttpClient) { }
   obtenerPlan() {
-    return this.httpClient.get('http://localhost:8888/planes');
+    return this.httpClient.get('https://blooming-inlet-24549.herokuapp.com/planes');
   }
 
   guardarPlan(id:any) {
-    return this.httpClient.post('http://localhost:8888/planes', id​​​​​);
+    return this.httpClient.post('https://blooming-inlet-24549.herokuapp.com/planes', id​​​​​);
   }
   eliminarPlan(id:any){
-    return this.httpClient.delete('http://localhost:8888/planes' + '/' + id​​​​​);
+    return this.httpClient.delete('https://blooming-inlet-24549.herokuapp.com/planes' + '/' + id​​​​​);
   }
 }

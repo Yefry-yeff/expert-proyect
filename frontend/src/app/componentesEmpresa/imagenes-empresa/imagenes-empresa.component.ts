@@ -17,12 +17,14 @@ export class ImagenesEmpresaComponent implements OnInit {
   ngOnInit(): void {
     this.idEmpresa = '5fd4ff3edc63884c9849ae81';
 
+    this.obtenerImagenes();
+
   }
 
   obtenerImagenes() {
     this.servicioEmpresa.obtenerEmpresa(this.idEmpresa).subscribe((data: any) => {
-      this.imgSub = data.bancoImagenes
-      console.log(data);
+      this.imgSub = data[1].bancoImagenes
+      console.log('Imagnes ',data[1].bancoImagenes);
     });
 
   }

@@ -8,13 +8,13 @@ export class PageEmpresaService {
 
   constructor(private httpClient:HttpClient) { }
   obtenerPage() {
-    return this.httpClient.get('http://localhost:8888/pages');
+    return this.httpClient.get('https://blooming-inlet-24549.herokuapp.com/pages');
   }
 
   guardarPlantilla(id:any) {
-    return this.httpClient.post('http://localhost:8888/pages', id​​​​​);
+    return this.httpClient.post('https://blooming-inlet-24549.herokuapp.com/pages', id​​​​​);
   }
   eliminarPlantilla(id:any){
-    return this.httpClient.delete('http://localhost:8888/pages' + '/' + id​​​​​);
+    return this.httpClient.delete('https://blooming-inlet-24549.herokuapp.com/pages' + '/' + id​​​​​);
   }
 }

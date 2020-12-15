@@ -12,20 +12,20 @@ export class UsuariosService {
     return algo;
   }
   obtenerUsuario(){​​​​​
-    return this.httpClient.get('http://localhost:8888/usuario'​​​​​);
+    return this.httpClient.get('https://blooming-inlet-24549.herokuapp.com/usuario'​​​​​);
   }​​​​​
 
   guardarCliente(id:any) {
-    return this.httpClient.post('http://localhost:8888/usuario', id​​​​​);
+    return this.httpClient.post('https://blooming-inlet-24549.herokuapp.com/usuario', id​​​​​);
   }
   eliminarCliente(id:any){
-    return this.httpClient.delete('http://localhost:8888/usuario' + '/' + id​​​​​);
+    return this.httpClient.delete('https://blooming-inlet-24549.herokuapp.com/usuario' + '/' + id​​​​​);
   }
 
   login(admin){
-    return this.httpClient.post('http://localhost:8888/admin/login', admin);
+    return this.httpClient.post('https://blooming-inlet-24549.herokuapp.com/admin/login', admin);
   }
   loginUser(user){
-    return this.httpClient.post('http://localhost:8888/usuario/login', user);
+    return this.httpClient.post('https://blooming-inlet-24549.herokuapp.com/usuario/login', user);
   }
 }

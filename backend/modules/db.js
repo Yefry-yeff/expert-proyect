@@ -8,7 +8,10 @@ var db = 'yeffShop';
 class Database{
     constructor(){
         //Promesas
-        mongoose.connect(`mongodb://${servidor}/${db}`)
+        
+        mongoose.connect(`mongodb+srv://yeffcode:YEFRY..yo18@cluster0.63vpz.mongodb.net/<dbname>?retryWrites=true&w=majority`)
+        //mongoose.connect(`mongodb://${servidor}/${db}`)
+
         .then(()=>{
             console.log('Conexion a MONGODB Realizada');
         }).catch((error)=>{

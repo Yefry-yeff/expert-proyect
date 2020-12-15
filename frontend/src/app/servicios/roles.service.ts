@@ -7,13 +7,13 @@ export class RolesService {
 
   constructor(private httpClient: HttpClient) { }
   obtenerRol() {
-    return this.httpClient.get('http://localhost:8888/roles');
+    return this.httpClient.get('https://blooming-inlet-24549.herokuapp.com/roles');
   }
   guardarRol(roles) {
-    return this.httpClient.post('http://localhost:8888/roles',roles);
+    return this.httpClient.post('https://blooming-inlet-24549.herokuapp.com/roles',roles);
   }
 
   eliminarRol(id:any){
-    return this.httpClient.delete('http://localhost:8888/roles' + '/' + id​​​​​);
+    return this.httpClient.delete('https://blooming-inlet-24549.herokuapp.com/roles' + '/' + id​​​​​);
   }
 }

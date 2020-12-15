@@ -15,7 +15,7 @@ export class ImageService {
   }
 
   subirImagenNode(imagen, idEmpresa) {
-    return this. httpClient.post('http://localhost:8888/empresa/image/'+ idEmpresa, imagen);
+    return this. httpClient.post('https://blooming-inlet-24549.herokuapp.com/empresa/image/'+ idEmpresa, imagen);
   }
 
 

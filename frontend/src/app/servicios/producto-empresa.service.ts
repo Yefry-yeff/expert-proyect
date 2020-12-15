@@ -8,13 +8,13 @@ export class ProductoEmpresaService {
 
   constructor(private httpClient:HttpClient) { }
   obtenerProductos() {
-    return this.httpClient.get('http://localhost:8888/productos');
+    return this.httpClient.get('https://blooming-inlet-24549.herokuapp.com/productos');
   }
 
   guardarProductos(id:any) {
-    return this.httpClient.post('http://localhost:8888/productos', id​​​​​);
+    return this.httpClient.post('https://blooming-inlet-24549.herokuapp.com/productos', id​​​​​);
   }
   eliminarProductos(id:any){
-    return this.httpClient.delete('http://localhost:8888/productos' + '/' + id​​​​​);
+    return this.httpClient.delete('https://blooming-inlet-24549.herokuapp.com/productos' + '/' + id​​​​​);
   }
 }

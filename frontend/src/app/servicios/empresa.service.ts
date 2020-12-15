@@ -9,15 +9,15 @@ export class EmpresaService {
   constructor(private httpClient: HttpClient) { }
 
   obtenerEmpresa(idEmpresa) {
-    return this.httpClient.get('http://localhost:8888/empresa', idEmpresa);
+    return this.httpClient.get('https://blooming-inlet-24549.herokuapp.com/empresa', idEmpresa);
   }
   guardarEmpresa(id:any) {
-    return this.httpClient.post('http://localhost:8888/empresa', id​​​​​);
+    return this.httpClient.post('https://blooming-inlet-24549.herokuapp.com/empresa', id​​​​​);
   }
   eliminarEmpresa(id:any){
-    return this.httpClient.delete('http://localhost:8888/empresa' + '/' + id​​​​​);
+    return this.httpClient.delete('https://blooming-inlet-24549.herokuapp.com/empresa' + '/' + id​​​​​);
   }
   login(empresa){
-    return this.httpClient.post('http://localhost:8888/empresa/login', empresa);
+    return this.httpClient.post('https://blooming-inlet-24549.herokuapp.com/empresa/login', empresa);
   }
 }

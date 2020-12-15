@@ -5,15 +5,10 @@
   Subir Imagen
 </button> -->
 <input class="d-none" type="file" #input (change)="subirImagen($event);">
-<div class="row">
-  <div class="col-5"></div>
-  <div class="col-2 text-center">
-    <img class="img-fluid m-3" (click)="input.click()"
-      src="https://byspel.com/wp-content/uploads/2017/01/upload-cloud.png" alt="">
-    <h5 class="text-primary">Subir Imagen</h5>
-  </div>
-  <div class="col-5"></div>
-</div>
+
+    <button type="button" class="btn btn-info btn-lg btn-block" (click)="input.click()" alt="">Subir Imagen</button>
+
+
 <div class="row">
   <div *ngFor="let item of imgSub" class="col-md-4 col-sm-6 col-lg-4 mb-1">
     <div class="card ">
