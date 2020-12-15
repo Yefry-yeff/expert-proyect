@@ -72,5 +72,16 @@ router.delete('/:idUsuario', (req, res) => {
         })
 });
 
+router.post('/login', function (req, res) {
+    usuario.findOne({ emailUsuario: req.body.emailUsuario, password: req.body.password }, {})
+        .then((data) => {
+            res.json(data);
+            res.end();
+        })
+        .catch((error) => {
+            res.json(error);
+            res.end();
+        })
+});
 
 module.exports = router;

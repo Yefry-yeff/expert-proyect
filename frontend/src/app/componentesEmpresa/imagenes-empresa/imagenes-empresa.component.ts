@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EmpresaService } from 'src/app/servicios/empresa.service';
 import { ImageService } from 'src/app/servicios/image.service';
 
 @Component({
@@ -8,14 +9,21 @@ import { ImageService } from 'src/app/servicios/image.service';
 })
 export class ImagenesEmpresaComponent implements OnInit {
 
-  constructor(private imagenService: ImageService) { }
+  constructor(private imagenService: ImageService, private servicioEmpresa:EmpresaService) { }
   urlImg: String;
-  idEmpresa: String;
+  idEmpresa:any;
+  imgSub: any;
 
   ngOnInit(): void {
+    this.idEmpresa = '5fd4ff3edc63884c9849ae81';
+
   }
 
   obtenerImagenes() {
+    this.servicioEmpresa.obtenerEmpresa(this.idEmpresa).subscribe((data: any) => {
+      this.imgSub = data.bancoImagenes
+      console.log(data);
+    });
 
   }
 
@@ -23,7 +31,7 @@ export class ImagenesEmpresaComponent implements OnInit {
     let imagen = e.target.files[0];
     console.log(imagen);
     const formData = new FormData();
-    formData.append('upload_preset', 'bancoImg');
+    formData.append('upload_preset', 'imagenes');
     formData.append('file', imagen);
 
     this.imagenService.subirImagen(formData).subscribe((data: any) => {
@@ -40,7 +48,7 @@ export class ImagenesEmpresaComponent implements OnInit {
       tipo: 'png',
       url: this.urlImg
     }
-    this.imagenService.subirImagenNode(img, '5fd4ff3edc63884c9849ae81').subscribe((data: any) => {
+    this.imagenService.subirImagenNode(img, this.idEmpresa).subscribe((data: any) => {
       console.log(data);
       this.obtenerImagenes();
     });

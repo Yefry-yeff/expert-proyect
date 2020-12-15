@@ -44,5 +44,16 @@ router.post('/', (req, res) => {
         res.end();
     });
 });
+router.post('/login', function (req, res) {
+    Admin.findOne({ emailAdmin: req.body.emailAdmin, password: req.body.password }, {})
+        .then((data) => {
+            res.json(data);
+            res.end();
+        })
+        .catch((error) => {
+            res.json(error);
+            res.end();
+        })
+});
 
 module.exports = router;

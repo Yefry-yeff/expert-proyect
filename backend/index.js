@@ -8,7 +8,7 @@ app.use(cors());//midlewordl dominios cruzados
 app.use(bodyParser.json());//Para poblr el json
 app.use(bodyParser.urlencoded({ extended: true }));//Para poblar el json
 
-//app.set('puerto',process.env.PORT || 8888);
+app.set('puerto',process.env.PORT || 8888);
 
 var usuarioRouter = require('./routers/usuarios-routers');
 app.use('/usuario', usuarioRouter);//TODO LO QUE VENGA CON /USUARIO ME LO ENVIA QUI
@@ -37,7 +37,7 @@ app.use('/productos', productoRouter);
 
 
 
-app.listen(8888, ()=>{
-    //console.log('Servidor del backend levantado en: '+app.get('puerto'));
-    console.log('Servidor del backend levantado en: 8888');
+app.listen(app,get('puerto'), ()=>{
+    console.log('Servidor del backend levantado en: '+app.get('puerto'));
+    //console.log('Servidor del backend levantado en: 8888');
 });

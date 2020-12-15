@@ -3,6 +3,17 @@ var router = express.Router();//declarando objeto para las rutas
 var Empresa = require('../models/empresa.modelo');
 var mongoose = require('mongoose');//Modulo para utilzar el tipo de dato objectId
 
+router.post('/login', function (req, res) {
+    Empresa.findOne({ nombreEmpresa: req.body.nombreEmpresa, password: req.body.password }, {})
+        .then((data) => {
+            res.json(data);
+            res.end();
+        })
+        .catch((error) => {
+            res.json(error);
+            res.end();
+        })
+});
 router.get('/', (req, res)=>{
     Empresa.find({},{
         nombreEmpresa: true,
@@ -112,11 +123,11 @@ router.post('/image/:idEmpresa', function (req, res) {
 
     Empresa.update(
         {
-            _id: idEmpresa,
+            _id: mongoose.Types.ObjectId(idEmpresa),
         },
         {
             $push: {
-                "banco": {
+                "bancoImagenes": {
                     _id: mongoose.Types.ObjectId(),
                     nombre: body.nombre,
                     tipo: body.tipo,

@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 export class UsuariosService {
 
   constructor(private httpClient: HttpClient) { }
-  
+
   registarusuario(algo) {
     return algo;
   }
@@ -20,5 +20,12 @@ export class UsuariosService {
   }
   eliminarCliente(id:any){
     return this.httpClient.delete('http://localhost:8888/usuario' + '/' + id​​​​​);
+  }
+
+  login(admin){
+    return this.httpClient.post('http://localhost:8888/admin/login', admin);
+  }
+  loginUser(user){
+    return this.httpClient.post('http://localhost:8888/usuario/login', user);
   }
 }

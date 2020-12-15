@@ -18,4 +18,11 @@ export class NavLandingComponent implements OnInit {
   irRutas1() {
     this.navegacion.navigate(['login']);
   }
+
+  irRutas2() {
+    this.navegacion.navigate(['loginAdmin']);
+  }
+  irRutas3() {
+    this.navegacion.navigate(['loginEmpresa']);
+  }
 }

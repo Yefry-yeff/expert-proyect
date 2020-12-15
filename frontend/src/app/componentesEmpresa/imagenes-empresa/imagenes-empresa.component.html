@@ -1,6 +1,28 @@
 <h2>Agrega tus imagenes</h2>
-<br><br><br><br><br>
+<!-- <br><br><br><br><br>
 <input class="d-none" type="file" #input (change)="subirImagen($event);">
 <button type="button" class="btn btn-primary btn-lg btn-block" (click)="input.click()">
   Subir Imagen
-</button>
+</button> -->
+<input class="d-none" type="file" #input (change)="subirImagen($event);">
+<div class="row">
+  <div class="col-5"></div>
+  <div class="col-2 text-center">
+    <img class="img-fluid m-3" (click)="input.click()"
+      src="https://byspel.com/wp-content/uploads/2017/01/upload-cloud.png" alt="">
+    <h5 class="text-primary">Subir Imagen</h5>
+  </div>
+  <div class="col-5"></div>
+</div>
+<div class="row">
+  <div *ngFor="let item of imgSub" class="col-md-4 col-sm-6 col-lg-4 mb-1">
+    <div class="card ">
+      <img class="card-img-top" src="{{item.url}}" alt="Card image cap">
+      <div class="card-body">
+        <h6 class="card-title text-muted">ID: {{item._id}}</h6>
+        <button class="btn btn-danger btn-sm btn-sm text-center">Eliminar</button>
+      </div>
+    </div>
+  </div>
+
+</div>

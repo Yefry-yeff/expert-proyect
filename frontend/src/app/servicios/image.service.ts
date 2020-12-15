@@ -8,10 +8,10 @@ export class ImageService {
 
   constructor(private httpClient: HttpClient) { }
 
-  url: string = 'https://api.cloudinary.com/v1_1/dl6znygp8/image/upload';
+  url: string = 'https://api.cloudinary.com/v1_1/dv8oucks9/image/upload';
 
   subirImagen(imagen) {
-    return this.httpClient.post('https://api.cloudinary.com/v1_1/dl6znygp8/image/upload', imagen);
+    return this.httpClient.post('https://api.cloudinary.com/v1_1/dv8oucks9/image/upload', imagen);
   }
 
   subirImagenNode(imagen, idEmpresa) {

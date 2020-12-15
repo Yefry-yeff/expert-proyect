@@ -7,8 +7,9 @@ import { EmpresaService } from 'src/app/servicios/empresa.service';
   styleUrls: ['./empresas.component.css']
 })
 export class EmpresasComponent implements OnInit {
-  
+
   empresa: any;
+  idEmpresa: any;
   empresas: any = {
 
     nombreEmpresa: '',
@@ -33,7 +34,7 @@ export class EmpresasComponent implements OnInit {
 
 
  obtenerEmpresas() {
-   this.empresaService.obtenerEmpresa().subscribe((data: any) => {
+   this.empresaService.obtenerEmpresa(this.idEmpresa).subscribe((data: any) => {
      this.empresa = data;
      console.log(data);
    });
